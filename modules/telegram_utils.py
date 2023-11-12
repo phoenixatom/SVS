@@ -1,10 +1,10 @@
-# svs/telegram_utils.py
+# modules/telegram_utils.py
 from typing import Dict, Any
 
 from telegram import Bot
 from telegram.constants import ParseMode
 
-from weather import weather_codes
+from modules.weather import weather_codes
 
 
 async def send_telegram_message(bot_token: str, chat_id: str, message: str, photo_path: str = None) -> None:

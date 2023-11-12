@@ -4,14 +4,13 @@ import os
 import sys
 
 import nest_asyncio
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from dotenv import load_dotenv
 
-from camera import capture_image
-from game_pings import get_game_pings
-from internet_metrics import get_internet_metrics
-from telegram_utils import send_internet_metrics_to_telegram
-from weather import get_weather
+from modules.camera import capture_image
+from modules.game_pings import get_game_pings
+from modules.internet_metrics import get_internet_metrics
+from modules.telegram_utils import send_internet_metrics_to_telegram
+from modules.weather import get_weather
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -31,6 +30,7 @@ LATITUDE = float(os.getenv("LATITUDE"))
 LONGITUDE = float(os.getenv("LONGITUDE"))
 
 nest_asyncio.apply()
+
 
 async def job():
     try:

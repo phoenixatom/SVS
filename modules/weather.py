@@ -1,4 +1,4 @@
-# weather.py
+# modules/weather.py
 from typing import Dict, Any
 
 import openmeteo_requests
@@ -35,6 +35,7 @@ weather_codes = {
     96: "⛈️ Thunderstorm with Slight Hail",
     99: "⛈️ Thunderstorm with Heavy Hail",
 }
+
 
 def get_weather(latitude: float, longitude: float) -> Dict[str, Any]:
     cache_session = requests_cache.CachedSession('.cache', expire_after=3600)

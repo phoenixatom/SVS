@@ -1,4 +1,4 @@
-# slvs/internet_metrics.py
+# modules/internet_metrics.py
 from typing import Dict
 
 import speedtest
