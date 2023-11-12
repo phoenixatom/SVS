@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 from modules.camera import capture_image
 from modules.game_pings import get_game_pings
 from modules.internet_metrics import get_internet_metrics
+from modules.satellite_image import get_maldivian_met_sat_image
 from modules.telegram_utils import send_internet_metrics_to_telegram
 from modules.weather import get_weather
 
@@ -41,6 +42,9 @@ async def job():
         logger.info(f"Image captured: {image_path}")
 
         if image_path:
+            sat_image = await get_maldivian_met_sat_image()
+            print(sat_image)
+
             # Get internet metrics
             internet_metrics = get_internet_metrics()
             logger.info(f"Internet metrics: {internet_metrics}")
@@ -50,7 +54,7 @@ async def job():
 
             # Send internet metrics and image to Telegram
             await send_internet_metrics_to_telegram(TG_BOT_API_KEY, TG_CHANNEL_ID, internet_metrics, image_path,
-                                                    STARLINK_NAME, weather_data, game_pings)
+                                                    STARLINK_NAME, weather_data, game_pings, sat_image)
             logger.info("Metrics sent to Telegram")
         else:
             logger.warning("No image")

@@ -11,6 +11,8 @@ retry-requests==2.0.0
 ping3==4.0.4
 APScheduler==3.10.4
 nest-asyncio==1.5.8
+beautifulsoup4==4.12.2
+lxml==4.9.3
 
 
 
