@@ -22,7 +22,6 @@ async def send_telegram_message(bot_token: str, chat_id: str, message: str, phot
 
     sky_image = InputMediaPhoto(open(photo_path, 'rb'))
     sat_image = InputMediaPhoto(media=sat_image_path)
-    print(sat_image)
 
     if photo_path:
         await bot.send_media_group(chat_id=chat_id, media=[sky_image, sat_image], caption=message,
@@ -71,5 +70,4 @@ async def send_internet_metrics_to_telegram(
         f"🧭 Wind Direction: {weather_forecast['wind_direction_10m']:.2f}°\n"
         f"💨 Wind Gusts: {weather_forecast['wind_gusts_10m']:.2f} km/h"
     )
-    print(sat_image)
     await send_telegram_message(bot_token, chat_id, message, photo_path=image_path, sat_image_path=sat_image)

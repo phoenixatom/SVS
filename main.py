@@ -43,7 +43,6 @@ async def job():
 
         if image_path:
             sat_image = await get_maldivian_met_sat_image()
-            print(sat_image)
 
             # Get internet metrics
             internet_metrics = get_internet_metrics()
