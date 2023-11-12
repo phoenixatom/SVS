@@ -2,7 +2,7 @@
 
 This project was created to monitor Starlink speeds and overhead cloud interference if any.
 
-![](C:\Users\96074\Documents\PythonProjects\SVS\demo.png)
+![](https://github.com/phoenixatom/SVS/blob/master/demo.png)
 
 
 ## Credits
